@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lambda-solutions/facetoface-2.0.svg?branch=master)](https://travis-ci.org/lambda-solutions/facetoface-2.0)
+
 -----------------------------------------------------------------------------
 Face-to-face module for Moodle
 Copyright (C) 2007-2011 Catalyst IT (http://www.catalyst.net.nz)
