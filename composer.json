@@ -1,0 +1,12 @@
+{
+	"name": "lambda-solutions/mod_facetoface",
+	"description": "Face-to-face activities are used to keep track of in-person trainings which require advance booking",
+        "license": "GPL-3.0",
+	"type": "moodle-mod",
+	"require": {
+		"composer/installers": "~1.0"
+	},
+	"extra": {
+		"installer-name": "facetoface"
+	}
+}
