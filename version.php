@@ -18,6 +18,7 @@
  * Copyright (C) 2007-2011 Catalyst IT (http://www.catalyst.net.nz)
  * Copyright (C) 2011-2013 Totara LMS (http://www.totaralms.com)
  * Copyright (C) 2014 onwards Catalyst IT (http://www.catalyst-eu.net)
+ * Copyright (C) 2017 Lambda Solutions (http://www.lambdasolutions.net)
  *
  * @package    mod
  * @subpackage facetoface
@@ -30,7 +31,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2016102800;
+$plugin->version   = 2016102801;
 $plugin->requires  = 2015051104;  // Requires this Moodle version.
 $plugin->release   = '2.3.2'; // User-friendly version number.
 $plugin->component = 'mod_facetoface';
