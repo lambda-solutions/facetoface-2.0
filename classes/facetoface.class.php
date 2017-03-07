@@ -436,7 +436,7 @@ class facetoface implements cacheable_object, IteratorAggregate  {
 
         // Check if there is a location field set.
         $params = array('shortname' => 'location');
-        $fieldid = $DB->get_field_select('facetoface_session_field', 'id', 'LOWER(shortname) ILIKE :shortname', $params);
+        $fieldid = $DB->get_field_select('facetoface_session_field', 'id', 'LOWER(shortname) LIKE LOWER(:shortname)', $params);
         if (!$fieldid) {
             return array();
         }
