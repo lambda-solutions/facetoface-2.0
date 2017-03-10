@@ -101,6 +101,7 @@ $string['cancellationmessage'] = 'Cancellation message';
 $string['cancellationconfirm'] = 'Are you sure you want to cancel your booking to this session?';
 $string['crontask'] = 'Face-to-Face maintenance jobs';
 $string['costheading'] = 'Session Cost';
+$string['currentsessions'] = 'Current Sessions';
 $string['currentstatus'] = 'Current status';
 $string['customfieldsheading'] = 'Custom Session Fields';
 $string['date'] = 'Date';
