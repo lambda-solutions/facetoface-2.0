@@ -97,7 +97,7 @@ if (optional_param('add', false, PARAM_BOOL) && confirm_sesskey()) {
             }
 
             $usernamefields = get_all_user_name_fields(true);
-            if (facetoface_get_user_submissions($facetoface->id, $adduser)) {
+            if (facetoface_get_user_session_signup($session->id, $adduser)) {
                 $erruser = $DB->get_record('user', array('id' => $adduser), "id, {$usernamefields}");
                 $errors[] = get_string('error:addalreadysignedupattendee', 'facetoface', fullname($erruser));
             } else {

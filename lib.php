@@ -4172,3 +4172,42 @@ class facetoface_existing_selector extends user_selector_base {
         return $options;
     }
 }
+
+/**
+ * Return a users' signups for one session of an individual facetoface activity.
+ * Should never be more than 1. If over 1, the user is signed up multiple
+ * times to the same session.
+ *
+ * @param integer $sessionid
+ * @param integer $userid
+ * @return array session data | false No data
+ */
+function facetoface_get_user_session_signup($sessionid, $userid) {
+    global $CFG, $DB;
+
+    $whereclause = "su.sessionid = ? AND su.userid = ? AND ss.superceded != 1";
+    $whereparams = array($sessionid, $userid);
+
+    // Do not return "cancelled" status.
+    $whereclause .= ' AND ss.statuscode >= ? AND ss.statuscode < ?';
+    $whereparams = array_merge($whereparams, array(MDL_F2F_STATUS_REQUESTED, MDL_F2F_STATUS_NO_SHOW));
+
+    return $DB->get_records_sql("
+        SELECT
+            su.id,
+            su.sessionid,
+            su.userid,
+            ss.timecreated,
+            ss.statuscode,
+            ss.superceded
+        FROM
+            {facetoface_signups} su
+        JOIN
+            {facetoface_signups_status} ss
+         ON su.id = ss.signupid
+        WHERE
+            {$whereclause}
+        ORDER BY
+            ss.timecreated
+    ", $whereparams);
+}
